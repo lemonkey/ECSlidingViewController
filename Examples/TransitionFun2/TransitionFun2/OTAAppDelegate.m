@@ -77,8 +77,8 @@
     self.slidingViewController.underRightViewController = nil;
 	
     // configure anchored layout
-    self.slidingViewController.anchorRightPeekAmount  = 50.0;
-    self.slidingViewController.anchorLeftRevealAmount = 300.0;
+	self.slidingViewController.anchorRightPeekAmount  = 50.0;
+//	self.slidingViewController.anchorLeftRevealAmount = 270.0;
 
 	// custom transition setup
 	self.transition = [[MEZoomAnimationController alloc] init];
