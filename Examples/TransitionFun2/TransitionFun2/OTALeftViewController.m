@@ -74,6 +74,8 @@ typedef enum OTAViewControllerTypes : NSInteger {
 			break;
 		}
 		case OTAViewControllerTypeOther: {
+			
+			// this will destroy and recreate other view controller even if it is the current center view
 			OTAOtherViewController *otherViewController = [[OTAOtherViewController alloc] initWithNibName:@"OTAOtherViewController" bundle:nil];
 			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:otherViewController];
 			

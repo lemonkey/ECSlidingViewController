@@ -16,6 +16,10 @@
 
 @implementation OTAOtherViewController
 
+- (void)dealloc {
+	NSLog(@"other view dealloc");
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
