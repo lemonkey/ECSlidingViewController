@@ -62,7 +62,10 @@
 
 	UIViewController *topViewController = [[OTACenterViewController alloc] initWithNibName: @"OTACenterViewController" bundle: nil];
     UIViewController *underLeftViewController  = [[OTALeftViewController alloc] initWithNibName: @"OTALeftViewController" bundle: nil];
-	
+
+	// we want left view to go underneath top view so that its background fills in the entire view
+//	underLeftViewController.edgesForExtendedLayout = ...;
+
 	// configure top view controller
     UIBarButtonItem *hamburgerButton = [[UIBarButtonItem alloc] initWithTitle:@"Ham" style:UIBarButtonItemStylePlain target:self action:@selector(showHamburgerMenu)];
     topViewController.navigationItem.title = @"Ham Demo";
