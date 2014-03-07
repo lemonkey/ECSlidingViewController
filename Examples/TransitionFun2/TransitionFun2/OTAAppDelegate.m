@@ -61,43 +61,31 @@
 - (UIViewController *) loadHamburgerMenu {
 
 	UIViewController *topViewController = [[OTACenterViewController alloc] initWithNibName: @"OTACenterViewController" bundle: nil];
-    UIViewController *underLeftViewController  = [[OTALeftViewController alloc] initWithNibName: @"OTALeftViewController" bundle: nil];
-
-	// we want left view to go underneath top view so that its background fills in the entire view
-//	underLeftViewController.edgesForExtendedLayout = ...;
-
-	// configure top view controller
-    UIBarButtonItem *hamburgerButton = [[UIBarButtonItem alloc] initWithTitle:@"Ham" style:UIBarButtonItemStylePlain target:self action:@selector(showHamburgerMenu)];
-    topViewController.navigationItem.title = @"Ham Demo";
-    topViewController.navigationItem.leftBarButtonItem  = hamburgerButton;
+    UIViewController *underLeftViewController = [[OTALeftViewController alloc] initWithNibName: @"OTALeftViewController" bundle: nil];
 
 	// main nav
 	UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:topViewController];
 
     // configure sliding view controller
     self.slidingViewController = [ECSlidingViewController slidingWithTopViewController:navigationController];
-    self.slidingViewController.underLeftViewController  = underLeftViewController;
+    self.slidingViewController.underLeftViewController = underLeftViewController;
     self.slidingViewController.underRightViewController = nil;
 	
     // configure anchored layout
-	self.slidingViewController.anchorRightPeekAmount  = 50.0;
-//	self.slidingViewController.anchorLeftRevealAmount = 270.0;
+	// (leaving out anchorRight or anchorLeft causes its value to be calculated dynamically)
+	self.slidingViewController.anchorRightPeekAmount = 50.0;
 
-	// custom transition setup
+	// custom zoom transition setup (borrowing MEZoomAnimationController)
 	self.transition = [[MEZoomAnimationController alloc] init];
 	self.slidingViewController.delegate = self.transition;
 
-	// enable swiping on the top view
+	// enable swiping on the top view, including navigation bar
 	[navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 	
-	// allow tapping on top view to bring it back into focus
+	// allow tapping on current top view to bring it back into focus
 	self.slidingViewController.topViewAnchoredGesture = ECSlidingViewControllerAnchoredGestureTapping | ECSlidingViewControllerAnchoredGesturePanning;
 	
 	return self.slidingViewController;
-}
-
-- (void)showHamburgerMenu {
-    [self.slidingViewController anchorTopViewToRightAnimated:YES];
 }
 
 @end

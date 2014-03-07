@@ -35,7 +35,10 @@ typedef enum OTAViewControllerTypes : NSInteger {
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-	
+
+	// we want left view to go underneath top view so that its background fills in the entire view
+	//self.edgesForExtendedLayout = ...;
+
 	// topViewController is the transitions navigation controller at this point.
     // We keep a reference to this instance so that we can go back to it without losing its state.
     self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
@@ -79,7 +82,7 @@ typedef enum OTAViewControllerTypes : NSInteger {
 			OTAOtherViewController *otherViewController = [[OTAOtherViewController alloc] initWithNibName:@"OTAOtherViewController" bundle:nil];
 			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:otherViewController];
 			
-			// allow nav to be swiped
+			// enable swiping on the top view, including navigation bar
 			[navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
 
 			self.slidingViewController.topViewController = navigationController;
