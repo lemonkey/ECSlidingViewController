@@ -23,6 +23,8 @@
 		CE8DD04218C9375500DF712E /* OTALeftViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DD04018C9375500DF712E /* OTALeftViewController.m */; };
 		CE8DD04318C9375500DF712E /* OTALeftViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DD04118C9375500DF712E /* OTALeftViewController.xib */; };
 		CE8DD04618C93BDC00DF712E /* MEZoomAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DD04518C93BDC00DF712E /* MEZoomAnimationController.m */; };
+		CE8DD04B18C950D900DF712E /* OTAOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE8DD04918C950D900DF712E /* OTAOtherViewController.m */; };
+		CE8DD04C18C950D900DF712E /* OTAOtherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE8DD04A18C950D900DF712E /* OTAOtherViewController.xib */; };
 		D0BB42A714BB4636B69B33AB /* libPods-TransitionFun2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 569054E244044B5A80AE39FD /* libPods-TransitionFun2.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +63,9 @@
 		CE8DD04118C9375500DF712E /* OTALeftViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTALeftViewController.xib; sourceTree = "<group>"; };
 		CE8DD04418C93BDC00DF712E /* MEZoomAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MEZoomAnimationController.h; sourceTree = "<group>"; };
 		CE8DD04518C93BDC00DF712E /* MEZoomAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MEZoomAnimationController.m; sourceTree = "<group>"; };
+		CE8DD04818C950D900DF712E /* OTAOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTAOtherViewController.h; sourceTree = "<group>"; };
+		CE8DD04918C950D900DF712E /* OTAOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTAOtherViewController.m; sourceTree = "<group>"; };
+		CE8DD04A18C950D900DF712E /* OTAOtherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OTAOtherViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,9 @@
 				CE8DD03F18C9375500DF712E /* OTALeftViewController.h */,
 				CE8DD04018C9375500DF712E /* OTALeftViewController.m */,
 				CE8DD04118C9375500DF712E /* OTALeftViewController.xib */,
+				CE8DD04818C950D900DF712E /* OTAOtherViewController.h */,
+				CE8DD04918C950D900DF712E /* OTAOtherViewController.m */,
+				CE8DD04A18C950D900DF712E /* OTAOtherViewController.xib */,
 				CE8DD04718C93BE000DF712E /* Transitions */,
 				CE8DD01918C928DC00DF712E /* Images.xcassets */,
 				CE8DD00818C928DC00DF712E /* Supporting Files */,
@@ -239,6 +247,7 @@
 			files = (
 				CE8DD03E18C92CC900DF712E /* OTACenterViewController.xib in Resources */,
 				CE8DD01A18C928DC00DF712E /* Images.xcassets in Resources */,
+				CE8DD04C18C950D900DF712E /* OTAOtherViewController.xib in Resources */,
 				CE8DD00C18C928DC00DF712E /* InfoPlist.strings in Resources */,
 				CE8DD04318C9375500DF712E /* OTALeftViewController.xib in Resources */,
 				CE8DD03718C92B6A00DF712E /* MainWindow.xib in Resources */,
@@ -292,6 +301,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE8DD04B18C950D900DF712E /* OTAOtherViewController.m in Sources */,
 				CE8DD04218C9375500DF712E /* OTALeftViewController.m in Sources */,
 				CE8DD04618C93BDC00DF712E /* MEZoomAnimationController.m in Sources */,
 				CE8DD00E18C928DC00DF712E /* main.m in Sources */,

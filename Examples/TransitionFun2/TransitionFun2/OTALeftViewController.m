@@ -6,10 +6,18 @@
 //  Copyright (c) 2014 OpenTable. All rights reserved.
 //
 
+#import "UIViewController+ECSlidingViewController.h"
+
 #import "OTALeftViewController.h"
+#import "OTAOtherViewController.h"
+
+typedef enum OTAViewControllerTypes : NSInteger {
+	OTAViewControllerTypeOriginalCenter,
+	OTAViewControllerTypeOther
+} OTAViewControllerTypes;
 
 @interface OTALeftViewController ()
-
+@property (nonatomic, strong) UINavigationController *transitionsNavigationController;
 @end
 
 @implementation OTALeftViewController
@@ -27,6 +35,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+	
+	// topViewController is the transitions navigation controller at this point.
+    // We keep a reference to this instance so that we can go back to it without losing its state.
+    self.transitionsNavigationController = (UINavigationController *)self.slidingViewController.topViewController;
 }
 
 - (void)didReceiveMemoryWarning
@@ -34,5 +46,49 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+-(IBAction)originalCenterViewButtonTapped:(id)sender {
+	[self viewButtonTappedForViewType:OTAViewControllerTypeOriginalCenter];
+}
+
+-(IBAction)otherViewButtonTapped:(id)sender {
+	[self viewButtonTappedForViewType:OTAViewControllerTypeOther];
+}
+
+-(void)viewButtonTappedForViewType:(OTAViewControllerTypes)viewControllerType {
+	
+	// This undoes the Zoom Transition's scale because it affects the other transitions.
+    // You normally wouldn't need to do anything like this, but we're changing transitions
+    // dynamically so everything needs to start in a consistent state.
+    self.slidingViewController.topViewController.view.layer.transform = CATransform3DMakeScale(1, 1, 1);
+
+	switch (viewControllerType) {
+		case OTAViewControllerTypeOriginalCenter: {
+			
+			// restore original pan gesture if user previously selected other view controller and reassigned topViewController
+			if(![self.transitionsNavigationController.view.gestureRecognizers containsObject:self.slidingViewController.panGesture]) {
+				[self.transitionsNavigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+			}
+			
+			self.slidingViewController.topViewController = self.transitionsNavigationController;
+			break;
+		}
+		case OTAViewControllerTypeOther: {
+			OTAOtherViewController *otherViewController = [[OTAOtherViewController alloc] initWithNibName:@"OTAOtherViewController" bundle:nil];
+			UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:otherViewController];
+			
+			// allow nav to be swiped
+			[navigationController.view addGestureRecognizer:self.slidingViewController.panGesture];
+
+			self.slidingViewController.topViewController = navigationController;
+			break;
+		}
+		default:
+			break;
+	}
+
+	[self.slidingViewController resetTopViewAnimated:YES];
+}
+
 
 @end

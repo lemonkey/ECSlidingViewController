@@ -13,7 +13,40 @@
         <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ubt-Ym-N65">
+                    <rect key="frame" x="25" y="122" width="270" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Original Center View">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="originalCenterViewButtonTapped:" destination="-1" eventType="touchUpInside" id="7NM-Bz-3w9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Zj-3m-yK7">
+                    <rect key="frame" x="25" y="207" width="270" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Other View">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="otherViewButtonTapped:" destination="-1" eventType="touchUpInside" id="a8j-BF-39k"/>
+                    </connections>
+                </button>
+            </subviews>
             <color key="backgroundColor" red="0.85490196939999996" green="0.2156862766" blue="0.26274511220000002" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="2Zj-3m-yK7" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="25" id="1Bi-ZT-KFb"/>
+                <constraint firstItem="Ubt-Ym-N65" firstAttribute="top" secondItem="1" secondAttribute="top" constant="122" id="2UM-98-cIy"/>
+                <constraint firstItem="Ubt-Ym-N65" firstAttribute="leading" secondItem="1" secondAttribute="leading" constant="25" id="95a-v5-UxD"/>
+                <constraint firstAttribute="trailing" secondItem="Ubt-Ym-N65" secondAttribute="trailing" constant="25" id="Bfg-Qq-Id8"/>
+                <constraint firstAttribute="trailing" secondItem="2Zj-3m-yK7" secondAttribute="trailing" constant="25" id="PPJ-iO-CwA"/>
+                <constraint firstItem="2Zj-3m-yK7" firstAttribute="top" secondItem="Ubt-Ym-N65" secondAttribute="bottom" constant="55" id="hZe-4G-5Ou"/>
+                <constraint firstAttribute="bottom" secondItem="2Zj-3m-yK7" secondAttribute="bottom" constant="331" id="zHN-dV-0qe"/>
+            </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>
