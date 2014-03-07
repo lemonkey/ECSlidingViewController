@@ -1,1 +1,19 @@
-<?xml version='1.0' encoding='UTF-8'?><Workspace version='1.0'><FileRef location='group:Examples/BasicMenu/BasicMenu.xcodeproj'/><FileRef location='group:Examples/LayoutDemo/LayoutDemo.xcodeproj'/><FileRef location='group:Examples/TransitionFun/TransitionFun.xcodeproj'/><FileRef location='group:Examples/Pods/Pods.xcodeproj'/></Workspace>
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:Examples/BasicMenu/BasicMenu.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/LayoutDemo/LayoutDemo.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/TransitionFun/TransitionFun.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/TransitionFun2/TransitionFun2.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Examples/Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>

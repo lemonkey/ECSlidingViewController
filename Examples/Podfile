@@ -15,3 +15,9 @@ target :TransitionFun do
   xcodeproj 'TransitionFun/TransitionFun.xcodeproj'
   pod 'ECSlidingViewController', :path => '../'
 end
+
+target :TransitionFun2 do
+  link_with 'TransitionFun2'
+  xcodeproj 'TransitionFun2/TransitionFun2.xcodeproj'
+  pod 'ECSlidingViewController', :path => '../'
+end
